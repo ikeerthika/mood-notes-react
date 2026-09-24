@@ -1,0 +1,445 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+/* =========================
+   COMMON
+========================= */
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 45px 25px;
+  background:
+    radial-gradient(circle at top left, #ede9fe 0, transparent 35%),
+    #f8fafc;
+  color: #1e293b;
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  max-width: 1150px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #4f46e5;
+}
+
+header p {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* =========================
+   DARK MODE BUTTON
+========================= */
+
+.theme-btn {
+  padding: 11px 17px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: white;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.theme-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(15, 23, 42, 0.1);
+}
+
+/* =========================
+   STATISTICS
+========================= */
+
+.stats {
+  max-width: 1150px;
+  margin: 35px auto 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #eef2f7;
+  padding: 23px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+  transition: all 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+}
+
+.stat-card h3 {
+  font-size: 30px;
+  margin: 0 0 7px;
+  font-weight: 800;
+  color: #4f46e5;
+}
+
+.stat-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================
+   NOTE FORM
+========================= */
+
+.note-form {
+  max-width: 1150px;
+  margin: 25px auto;
+  display: flex;
+  gap: 12px;
+  background: white;
+  padding: 15px;
+  border: 1px solid #eef2f7;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+input,
+select {
+  padding: 13px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+  background: white;
+  color: #334155;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.note-form input {
+  flex: 1;
+}
+
+.note-form button {
+  padding: 13px 22px;
+  border: none;
+  border-radius: 11px;
+  background: #4f46e5;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.note-form button:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   SEARCH + FILTER
+========================= */
+
+.controls {
+  max-width: 1150px;
+  margin: 22px auto;
+  display: flex;
+  gap: 12px;
+}
+
+.controls input {
+  flex: 1;
+}
+
+/* =========================
+   NOTES
+========================= */
+
+.notes-container {
+  max-width: 1150px;
+  margin: 28px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.note-card {
+  background: white;
+  padding: 22px;
+  border: 1px solid #eef2f7;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.note-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #6366f1;
+}
+
+.note-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.1);
+}
+
+/* =========================
+   NOTE HEADER
+========================= */
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.mood {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.date {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.note-card p {
+  margin: 18px 0;
+  color: #475569;
+  line-height: 1.7;
+  font-size: 14px;
+  min-height: 48px;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.actions {
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 14px;
+}
+
+.actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.actions button:hover {
+  transform: translateY(-1px);
+}
+
+.edit {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.delete {
+  background: #fff1f2;
+  color: #e11d48;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 70px 20px;
+  background: white;
+  border: 1px dashed #cbd5e1;
+  border-radius: 18px;
+}
+
+.empty h2 {
+  margin-bottom: 8px;
+  color: #475569;
+}
+
+.empty p {
+  color: #94a3b8;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+.app.dark {
+  background:
+    radial-gradient(circle at top left, #312e81 0, transparent 30%),
+    #0f172a;
+  color: #f8fafc;
+}
+
+.dark header p {
+  color: #94a3b8;
+}
+
+.dark .theme-btn {
+  background: #1e293b;
+  color: white;
+  border-color: #334155;
+}
+
+.dark .stat-card,
+.dark .note-form,
+.dark .note-card,
+.dark .empty {
+  background: #1e293b;
+  border-color: #334155;
+  color: white;
+}
+
+.dark .stat-card p,
+.dark .note-card p {
+  color: #94a3b8;
+}
+
+.dark input,
+.dark select {
+  background: #0f172a;
+  color: white;
+  border-color: #334155;
+}
+
+.dark input::placeholder {
+  color: #64748b;
+}
+
+.dark .actions {
+  border-color: #334155;
+}
+
+.dark .mood {
+  background: #312e81;
+  color: #c7d2fe;
+}
+
+.dark .date {
+  color: #64748b;
+}
+
+.dark .edit {
+  background: #312e81;
+  color: #c7d2fe;
+}
+
+.dark .delete {
+  background: #3f1d25;
+  color: #fda4af;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .notes-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .app {
+    padding: 25px 15px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 18px 10px;
+  }
+
+  .note-form {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .notes-container {
+    grid-template-columns: 1fr;
+  }
+}
+
